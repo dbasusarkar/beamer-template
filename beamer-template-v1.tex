@@ -1,0 +1,170 @@
+\documentclass[12pt]{beamer}
+% %%%% %%% %%% %%% %%% %%% %%% Started with this template %%% %%% %%% %%% %%% %%% %%%%  %% 
+% Acknowledgement: https://www.overleaf.com/latex/templates/beamer-no-oficial-uniajc/%  %%
+%vsnqsdsypqvz                                                                           %%
+%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%%% %% 
+%
+%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%%% %% 
+%% %%% %%% %%% %% %%% %%% %%% %%% %%% %%% PREAMBLE %%% %%% %%% %%% %%%% %%% %%% %%% %%% %%
+%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%%% %% 
+%                                                                                       %%
+% %%% %%% %%% %%% %%% ADDING FULL-WIDTH \hrule BELOW FRAME TITLE %%% %%% %%% %%% %%% %  %%
+% Acknowledgement: https://tex.stackexchange.com/questions/343517/beamer-full-width% %  %%
+%-hrule-below-frame-title                                                            %  %%
+\setbeamertemplate{frametitle}{%                                                     %  %%
+	\usebeamerfont{frametitle}\insertframetitle                                      %  %%
+	\vphantom{g}% To avoid fluctuations per frame                                    %  %%
+	\hrule % Uncomment to see desired effect, without a full-width hrule             %  %%
+	\par%                                                                            %  %%
+	%\hspace*{-\dimexpr0.5\paperwidth-0.5\textwidth}% Calculation of left margin     %  %% 
+	%\rule[0.5\baselineskip]{\paperwidth}{0.4pt}    % width                          %  %%
+}                                                                                    %  %%
+% %%% xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx %%% %  %%
+%                                                                                       %%
+% %%%%% %%% %%% %%% %%% %%% %%% INSERT SLIDE NUMBER %%% %%% %%% %%% %%% %%% %%% %%%% %  %%
+% Acknowledgement: https://tex.stackexchange.com/questions/137022/how-to-insert-page%%  %%
+%-number-in-beamer-navigation-symbols                                                %  %%
+\addtobeamertemplate{navigation symbols}{}{%                                         %  %%
+    \usebeamerfont{footline}%                                                        %  %%
+    \usebeamercolor[fg]{footline}%                                                   %  %%
+    \hspace{0.75em}%                                                                 %  %%
+%	\insertframenumber/\inserttotalframenumber                                       %  %%
+%	\raisebox{1em}[0pt][0pt]{\insertframenumber\kern1em}                             %  %%
+	\raisebox{0.275em}[0pt][0pt]{\insertframenumber/\inserttotalframenumber}         %  %%
+}                                                                                    %  %% 
+% %%% xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx %%% %  %%
+%                                                                                       %% 
+% %%%%% %%% %%% %%% %%% %%% %%% BORDERED BLOCK/BOX %%% %%% %%% %%% %%% %%% %%% %%%%% %  %%
+% Acknowledgement: https://tex.stackexchange.com/questions/337331/how-to-create-a%   %  %%
+%-rounded-beamer-block-with-the-title-starting-a-bit-forward-than                    %  %%
+\usepackage[most]{tcolorbox}                                                         %  %%    
+%                                                                                    %  %%
+\newtcolorbox{bbox}[2][]{%                                                           %  %% 
+    colback=bg,                                                                      %  %% 
+    colframe=blue!75!black,                                                          %  %%
+    fonttitle=\bfseries,                                                             %  %%
+    coltitle=blue!75!black,                                                          %  %%
+    colbacktitle=bg,                                                                 %  %%
+    enhanced,                                                                        %  %%
+    attach boxed title to top left={yshift=-1.2mm, xshift=2mm},                      %  %%
+  title=#2,                                                                          %  %%
+  #1}                                                                                %  %%
+% %%% xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx %%% %  %%
+%                                                                                       %%
+\usepackage{graphicx}                                                                   %%
+\usepackage[USenglish,english]{babel}                                                   %%
+\usepackage[utf8x]{inputenc}                                                            %%
+%\usepackage[colorlinks]{hyperref}                                                      %%
+%\usepackage[USenglish]{isodate}                                                        %%
+\usepackage{blindtext}                                                                  %%
+%                                                                                       %%
+% %%%% %%% %%% %%% %%% %%% CUSTOMIZED TITLE PAGE FORMAT %%% %%% %%% %%% %%% %%% %%%% %  %%
+% Acknowledgement: https://tex.stackexchange.com/questions/82794/removing-page-number%  %%
+%-from-title-frame-without-changing-the-theme                                        %  %%
+\defbeamertemplate*{title page}{customized}[1][]                                     %  %%
+{%                                                                                   %  %%
+	\vspace{2.5em}                                                                   %  %%	
+	{\color{gray}\usebeamerfont{date}\insertdate}\par                                %  %%
+	\bigskip                                                                         %  %%
+	\usebeamerfont{title}\inserttitle\par                                            %  %%
+	\smallskip                                                                       %  %% 
+	\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par         %  %%
+	\bigskip                                                                         %  %%
+	%\usebeamerfont{author}\insertauthor\par                                         %  %%
+	%\usebeamerfont{title}\insertauthor\par                                          %  %%
+	{\color{black}\textbf{\insertauthor}}\par                                        %  %%
+	\bigskip                                                                         %  %%
+	\usebeamerfont{institute}\insertinstitute\par                                    %  %%
+	\bigskip                                                                         %  %%
+	%\hrule                                                                          %  %% 
+	\begin{center}                                                                   %  %%
+		\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic                         %  %%
+	\end{center}                                                                     %  %%
+	%\hrule                                                                          %  %%
+}                                                                                    %  %%
+%                                                                                    %  %%
+\date{Month 00, 0000}                                                                %  %%
+%\printdate{yyyy-mm-dd}                                                              %  %%
+%\printdate{2019-9-16}                                                               %  %%
+%                                                                                    %  %%
+\title{The Title Goes Here}                                                          %  %% 
+%                                                                                    %  %%
+ \subtitle{You want subtitle, I give you subtitle}                                   %  %%
+ %                                                                                   %  %%
+ \author[shortname]{Author A. One \inst{1}\\                                         %  %%
+ Author B. Two \inst{1,2}\\                                                          %  %%
+ Author C. Three  \inst{2}}                                                          %  %%
+                                                                                     %  %%
+ \institute[shortinst]{\inst{1} Huge University\\%                                   %  %%
+                       \inst{2} Tiny University}                                     %  %%
+%                                                                                    %  %%
+% \titlegraphic{\includegraphics[width=9cm]{figures/yourfigure.png}}                 %  %%
+% %%% xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx %%% %  %%
+%                                                                                       %%
+%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%%% %% 
+%% %%% %%% %%% %% %%% %%% %%% %%% %%% PREAMBLE ENDS %%% %%% %%% %%% %%% %%% %%% %%% %%% %%
+%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%%% %% 
+% 
+%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %% 
+%% %%% %%% %%% %%% %%% %%% %%% %%% DOCUMENT %%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %% 
+%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %% 
+%%                                                                                      %%
+\begin{document}                                                                         
+%                                                                                         
+% %%% %%% %%% %%% %%% %%% %%% %%% Title Page %%% %%% %%% %%% %%% %%% %%% %%% %%% %%% % 
+\bgroup                                                                              %
+\makeatletter                                                                        %
+\addtobeamertemplate{navigation symbols}{}{%                                         %
+    \usebeamerfont{footline}%                                                        %
+    \usebeamercolor[fg]{footline}%                                                   %
+    \hspace{-2.25em}%                                                                %
+}                                                                                    % 
+\makeatother                                                                         %
+\section{}                                                                           %
+\begin{frame}                                                                        %
+	\maketitle                                                                       %
+	{\color{gray}                                                                    % 
+	\hrule                                                                           % 
+	\bigskip                                                                         % 
+	Extra Text\\                                                                     % 
+	More of Extra Text                                                               %
+	\bigskip                                                                         % 
+	\hrule                                                                           %
+	}                                                                                %
+	\vspace{4em}	                                                                 %
+\end{frame}                                                                          %
+\egroup                                                                              % 
+% %%% %%% %%% %%% %%% %%% %%% %%% %%% Title Page %%% %%% %%% %%% %%% %%% %%% %%% %%% % 
+%                                                                                        
+% %%% %%% %%% %%% %%% To Start Counting Slides After the Title Slide %%% %%% %%% %%% %
+\setcounter{framenumber}{0}                                                          % 
+% %%% xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx %%% % 
+%
+% %%% %%% %%% %%% %%% %%% %%% %%% Motivation Section %%% %%% %%% %%% %%% %%% %%% %%% % 
+\section{Section Name} 
+%	
+	\begin{frame}{Frame Name}
+		%
+		\begin{bbox}{Write Something}
+			\blindtext[1]	
+		\end{bbox}
+		%
+	\end{frame}
+% %%% xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx Section Ends xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx %%% % 
+
+% %%%% %%% %%% %%% %%% %%% %%% Introduction Section %%% %%% %%% %%% %%% %%% %%% %%%% % 
+\section{Section Name}
+	\begin{frame}{Frame Name}
+		\itemize
+			\item Item one.
+			\item Item two.
+			\item Item three.
+			\item Item four.
+	\end{frame}
+% %%% xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx Section Ends xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx %%% % 
+%
+\end{document}
+%%                                                                                      %%
+%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%%% %% 
+%% %%%% %%%% %%% %%% %%% %%% %%% %%% DOCUMENT ENDS %%% %%% %%% %%% %%% %%% %%% %%% %%%% %% 
+%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%% %%%% %% 
