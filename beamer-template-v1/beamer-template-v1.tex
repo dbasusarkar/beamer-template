@@ -12,12 +12,12 @@
 % Acknowledgement: https://tex.stackexchange.com/questions/343517/beamer-full-width% %  %%
 %-hrule-below-frame-title                                                            %  %%
 \setbeamertemplate{frametitle}{%                                                     %  %%
-	\usebeamerfont{frametitle}\insertframetitle                                      %  %%
-	\vphantom{g}% To avoid fluctuations per frame                                    %  %%
-	\hrule % Uncomment to see desired effect, without a full-width hrule             %  %%
-	\par%                                                                            %  %%
-	%\hspace*{-\dimexpr0.5\paperwidth-0.5\textwidth}% Calculation of left margin     %  %% 
-	%\rule[0.5\baselineskip]{\paperwidth}{0.4pt}    % width                          %  %%
+	\usebeamerfont{frametitle}\insertframetitle                                  %  %%
+	\vphantom{g}% To avoid fluctuations per frame                                %  %%
+	\hrule % Uncomment to see desired effect, without a full-width hrule         %  %%
+	\par%                                                                        %  %%
+	%\hspace*{-\dimexpr0.5\paperwidth-0.5\textwidth}% Calculation of left margin %  %% 
+	%\rule[0.5\baselineskip]{\paperwidth}{0.4pt}    % width                      %  %%
 }                                                                                    %  %%
 % %%% xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx %%% %  %%
 %                                                                                       %%
@@ -28,9 +28,9 @@
     \usebeamerfont{footline}%                                                        %  %%
     \usebeamercolor[fg]{footline}%                                                   %  %%
     \hspace{0.75em}%                                                                 %  %%
-%	\insertframenumber/\inserttotalframenumber                                       %  %%
-%	\raisebox{1em}[0pt][0pt]{\insertframenumber\kern1em}                             %  %%
-	\raisebox{0.275em}[0pt][0pt]{\insertframenumber/\inserttotalframenumber}         %  %%
+%	\insertframenumber/\inserttotalframenumber                                   %  %%
+%	\raisebox{1em}[0pt][0pt]{\insertframenumber\kern1em}                         %  %%
+	\raisebox{0.275em}[0pt][0pt]{\insertframenumber/\inserttotalframenumber}     %  %%
 }                                                                                    %  %% 
 % %%% xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx %%% %  %%
 %                                                                                       %% 
@@ -63,24 +63,24 @@
 %-from-title-frame-without-changing-the-theme                                        %  %%
 \defbeamertemplate*{title page}{customized}[1][]                                     %  %%
 {%                                                                                   %  %%
-	\vspace{2.5em}                                                                   %  %%	
-	{\color{gray}\usebeamerfont{date}\insertdate}\par                                %  %%
-	\bigskip                                                                         %  %%
-	\usebeamerfont{title}\inserttitle\par                                            %  %%
-	\smallskip                                                                       %  %% 
-	\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par         %  %%
-	\bigskip                                                                         %  %%
-	%\usebeamerfont{author}\insertauthor\par                                         %  %%
-	%\usebeamerfont{title}\insertauthor\par                                          %  %%
-	{\color{black}\textbf{\insertauthor}}\par                                        %  %%
-	\bigskip                                                                         %  %%
-	\usebeamerfont{institute}\insertinstitute\par                                    %  %%
-	\bigskip                                                                         %  %%
-	%\hrule                                                                          %  %% 
-	\begin{center}                                                                   %  %%
-		\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic                         %  %%
-	\end{center}                                                                     %  %%
-	%\hrule                                                                          %  %%
+	\vspace{2.5em}                                                               %  %%	
+	{\color{gray}\usebeamerfont{date}\insertdate}\par                            %  %%
+	\bigskip                                                                     %  %%
+	\usebeamerfont{title}\inserttitle\par                                        %  %%
+	\smallskip                                                                   %  %% 
+	\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par     %  %%
+	\bigskip                                                                     %  %%
+	%\usebeamerfont{author}\insertauthor\par                                     %  %%
+	%\usebeamerfont{title}\insertauthor\par                                      %  %%
+	{\color{black}\textbf{\insertauthor}}\par                                    %  %%
+	\bigskip                                                                     %  %%
+	\usebeamerfont{institute}\insertinstitute\par                                %  %%
+	\bigskip                                                                     %  %%
+	%\hrule                                                                      %  %% 
+	\begin{center}                                                               %  %%
+		\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic                 %  %%
+	\end{center}                                                                 %  %%
+	%\hrule                                                                      %  %%
 }                                                                                    %  %%
 %                                                                                    %  %%
 \date{Month 00, 0000}                                                                %  %%
@@ -122,16 +122,16 @@
 \makeatother                                                                         %
 \section{}                                                                           %
 \begin{frame}                                                                        %
-	\maketitle                                                                       %
-	{\color{gray}                                                                    % 
-	\hrule                                                                           % 
-	\bigskip                                                                         % 
-	Extra Text\\                                                                     % 
-	More of Extra Text                                                               %
-	\bigskip                                                                         % 
-	\hrule                                                                           %
-	}                                                                                %
-	\vspace{4em}	                                                                 %
+	\maketitle                                                                   %
+	{\color{gray}                                                                % 
+	\hrule                                                                       % 
+	\bigskip                                                                     % 
+	Extra Text\\                                                                 % 
+	More of Extra Text                                                           %
+	\bigskip                                                                     % 
+	\hrule                                                                       %
+	}                                                                            %
+	\vspace{4em}	                                                             %
 \end{frame}                                                                          %
 \egroup                                                                              % 
 % %%% %%% %%% %%% %%% %%% %%% %%% %%% Title Page %%% %%% %%% %%% %%% %%% %%% %%% %%% % 
