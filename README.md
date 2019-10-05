@@ -1,2 +1,2 @@
-# beamer-templates
+# Beamer Template
 Current version: v1
