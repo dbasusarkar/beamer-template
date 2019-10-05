@@ -1,2 +1,2 @@
-# Beamer Template
+## Beamer Template
 Current version: v1
